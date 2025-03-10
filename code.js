@@ -4,15 +4,14 @@ function binarySearch(list, element) {
     
     while (left <= right) {
         let mid = Math.floor((left + right) / 2);
-        
+		//find the middle of the list
         if (list[mid] === element) {
-            return mid;
+            return mid; //Return index of element
         } else if (list[mid] < element) {
             left = mid + 1;
-        } else {
+        } else if (list[mid] > element) {
             right = mid - 1;
         }
     }
-    
-    return -1;
+    return -1;	//Element not found
 }
